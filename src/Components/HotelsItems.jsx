@@ -116,7 +116,7 @@ const HotelsItems = () => {
     {name:route.params.name})} activeOpacity={0.7} className='w-full flex items-center absolute bottom-5'>
       <View className='bg-green-600 w-[90%] h-[53px] rounded-[8px] flex-row items-center justify-between px-2'>
       <View>
-        <Text className='text-white font-[600] text-[15px] '>{items} items | ${amount}</Text>
+        <Text className='text-white font-[600] text-[15px] '>{items} items | ₹{amount}</Text>
         <Text className='text-white font-[600] text-[15px] '>Extra Charges may apply</Text>
       </View>
       <Text className='text-white font-[700] text-[16px] '>View Cart</Text>

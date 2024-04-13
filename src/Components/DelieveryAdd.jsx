@@ -3,8 +3,10 @@ import React from 'react'
 import { Entypo } from '@expo/vector-icons';
 import img from '../assets/profile.jpeg'
 import { useNavigation } from '@react-navigation/native';
+import { useSelector } from 'react-redux';
 const DelieveryAdd = () => {
     const {navigate} = useNavigation();
+    const address = useSelector((state)=>state.address.address)
   return (
     <View>
       <View>
@@ -15,7 +17,7 @@ const DelieveryAdd = () => {
         <View className='flex-row items-center justify-between px-4 mt-2'>
 
             <View className='flex gap-1'>
-                <Text className='text-[17px] font-[600] '>904 Oak Ave</Text>
+                <Text className='text-[17px] font-[600] '>{address}</Text>
                 <Text className='text-[17px] font-[600] '>Brooklyn, New York</Text>
             </View>
 

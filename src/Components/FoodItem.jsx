@@ -6,6 +6,7 @@ import MenuCompenent from './MenuCompenent';
 const FoodItem = ({item}) => {
     const data = [item];
     const [state,setstate] = useState(['Recommended']);
+    
     const handlestate = (name)=>{
       if(state.includes(name)){
         const a  = [...state]

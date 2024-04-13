@@ -10,7 +10,7 @@ import QuickFood from '../Components/QuickFood'
 import { Ionicons } from "@expo/vector-icons";
 import Hotelsdata from '../data/Hotelsdata'
 import Menuitems from '../Components/Menuitems'
-const Home = (props) => {
+const Home = () => {
   const hoteldata = Hotelsdata;
   return (
     <SafeAreaView className='bg-gray-100 mb-2'>
