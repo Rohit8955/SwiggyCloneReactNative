@@ -9,12 +9,15 @@ const SignUp = () => {
     const {navigate} = useNavigation();
     const [email,setemail] = useState('');
     const [password,setpassword] = useState('')
-    const [cnfrmpassword,setcnfrmpassword] = useState('')
+    const [cnfrmpassword,setcnfrmpassword] = useState('');
+    const [loading,setloading] = useState(false);
+    
 
     const handleclicked = ()=>{
         if(email!=='' && password!=='' && cnfrmpassword!==''){
            if(cnfrmpassword===password){
             // console.warn('SignUp succesfull')
+            setloading(true);
             createUserWithEmailAndPassword(auth,email,password).then((value)=>{
                 console.warn('SignUp Successfully')
                 navigate('Home');
@@ -37,7 +40,10 @@ const SignUp = () => {
             <TextInput onChangeText={(text)=>setcnfrmpassword(text)} secureTextEntry className='bg-white font-[500] py-2 rounded-md px-2 mt-4' placeholder='Comfirm Password'/>
         </View>
         <TouchableOpacity onPress={handleclicked} activeOpacity={0.7} className='mt-10 w-full px-6'>
-            <Text className='bg-amber-500 rounded-md text-white text-center font-semibold text-[18px] py-2'>SignUp</Text>
+            <View className='bg-amber-500 rounded-md  py-2'>
+                {loading===false?(<Text className='text-white font-semibold text-[18px] text-center'>SignUp</Text>)
+                :(<Text className='text-white text-[18px] text-center font-semibold'>Loading...</Text>)}
+            </View>
         </TouchableOpacity>
     </View>
   )
